@@ -1,0 +1,7 @@
+# port
+server:
+  port: 18801
+
+# password
+mySocket:
+  myPwd: test_123

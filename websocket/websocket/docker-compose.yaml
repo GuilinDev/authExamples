@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  websocket-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "18081:18081"
+    volumes:
+      - /tmp
+    environment:
+      - JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom
