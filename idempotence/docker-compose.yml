@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  client:
+    build: ./idempotenceClient
+    depends_on:
+      - endpoint
+
+  endpoint:
+    build: ./idempotenceEndpoint
+    ports:
+      - "8082:8082"
+    depends_on:
+      - redis
+
+  redis:
+    image: "redis:7.2"
+    ports:
+      - "6379:6379"
